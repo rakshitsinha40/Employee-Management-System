@@ -6,12 +6,12 @@ public class Emp {
     String address;
     String role;
 
-    Emp()
+    Emp(String ID,String NAME,String ADD,String ROLE )
     {
-        this.id=null;
-        this.name=null;
-        this.address=null;
-        this.role=null;
+        this.id=ID;
+        this.name=NAME;
+        this.address=ADD;
+        this.role=ROLE;
     }
 
     public String getId() {
@@ -30,9 +30,7 @@ public class Emp {
         return role;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+
 
     public void setName(String name) {
         this.name = name;
