@@ -1,2 +1,3 @@
-package com.barclays;public class Data {
+package com.barclays;
+public class Data {
 }

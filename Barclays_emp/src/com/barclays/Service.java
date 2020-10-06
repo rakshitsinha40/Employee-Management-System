@@ -1,2 +1,4 @@
-package com.barclays;public class Service {
+package com.barclays;
+
+public class Service {
 }

@@ -1,2 +1,4 @@
-package com.barclays;public class Emp {
+package com.barclays;
+
+public class Emp {
 }
