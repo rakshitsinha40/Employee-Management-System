@@ -20,7 +20,7 @@ public class Presentation {
             Scanner sc = new Scanner(System.in);
 
             input = sc.nextInt();
-            service.Selection(input);
+            service.selection(input);
         }while (input > 0 && input < 5);
     }
 

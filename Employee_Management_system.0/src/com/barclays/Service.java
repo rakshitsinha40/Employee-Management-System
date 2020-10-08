@@ -3,24 +3,25 @@ package com.barclays;
 import java.util.Scanner;
 
 public class Service {
-    public static void Selection(int input) {
-        Data emp_map=new Data();
+    public static void selection(int input) {
+        DataMap emp_data=new DataMap();
+        //DataSQL emp_data=new DataSQL();
         Scanner sc=new Scanner(System.in);
         switch (input) {
             case 1:
                 System.out.println("Please Enter the details of employee ");
                 Emp emp;
-                emp=CreateEmp();
-                emp_map.add(emp.getId(),emp);
+                emp=createEmp();
+                emp_data.add(emp.getId(),emp);
                 break;
             case 2:
                 System.out.println("Please enter Id to read : ");
                 String read_ID = sc.next();
+                emp = emp_data.read(read_ID);
 
-                if (emp_map.check(read_ID)) {
-                    emp=emp_map.read(read_ID);
-                    Show(emp);
-
+                if(emp!=null)
+                {
+                    show(emp);
                 }else
                 {
                     System.out.println("ID not found\n");
@@ -29,10 +30,10 @@ public class Service {
             case 3:
                 System.out.println(" Enter Id to be updated: ");
                 String update_ID = sc.next();
-                if (emp_map.check(update_ID)) {
+                if (emp_data.check(update_ID)) {
 
-                    emp=UpdateEmp(emp_map.read(update_ID));
-                    emp_map.update(update_ID, emp);
+                    emp=updateEmp(emp_data.read(update_ID));
+                    emp_data.update(update_ID, emp);
 
                 }else
                 {
@@ -42,8 +43,8 @@ public class Service {
             case 4:
                 System.out.println("Please enter Id to be deleted: ");
                 String delete_ID = sc.next();
-                if (emp_map.check(delete_ID)) {
-                    emp_map.delete(delete_ID);
+                if (emp_data.check(delete_ID)) {
+                    emp_data.delete(delete_ID);
                     System.out.println("Employee record Deleted Successfully\n");
                 }
                 else
@@ -58,7 +59,7 @@ public class Service {
         }
     }
 
-    public static Emp CreateEmp()
+    public static Emp createEmp()
     {
 
         Scanner sc=new Scanner(System.in);
@@ -74,7 +75,7 @@ public class Service {
         return emp;
     }
 
-    public static void Show(Emp emp)
+    public static void show(Emp emp)
     {
         System.out.println("Found ID : "+emp.getId());
         System.out.println("Name : "+emp.getName());
@@ -82,7 +83,7 @@ public class Service {
         System.out.println("Role : "+emp.getRole());
     }
 
-    public static Emp UpdateEmp(Emp emp)
+    public static Emp updateEmp(Emp emp)
     {
 
         Scanner sc=new Scanner(System.in);

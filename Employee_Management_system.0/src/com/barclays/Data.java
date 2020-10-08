@@ -1,33 +1,22 @@
 package com.barclays;
 
-import java.util.HashMap;
 
-public class Data {
-    static HashMap<String, Emp> employee = new HashMap<>();
 
-    public static void add(String Id,Emp emp)
-    {
-        employee.put(Id,emp);
-    }
+public interface Data {
 
-    public static boolean check(String Id)
-    {
-        return employee.containsKey(Id);
-    }
+    void add(String Id,Emp emp);
 
-    public static Emp read(String Id)
-    {
-        return employee.get(Id);
-    }
 
-    public static void update(String Id,Emp emp)
-    {
-        employee.replace(Id,emp);
-    }
+    boolean check(String Id);
 
-    public static void delete(String Id)
-    {
-        employee.remove(Id);
-    }
+
+    Emp read(String Id);
+
+
+    void update(String Id,Emp emp);
+
+
+    void delete(String Id);
+
 
 }
