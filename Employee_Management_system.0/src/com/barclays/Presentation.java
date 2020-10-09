@@ -1,10 +1,11 @@
 package com.barclays;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 
 public class Presentation {
-    public static void MainMenu() {
+    public static void MainMenu() throws SQLException {
         Service service;
         service = new Service();
         int input;

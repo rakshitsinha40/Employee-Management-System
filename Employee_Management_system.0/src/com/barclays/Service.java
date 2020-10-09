@@ -1,11 +1,12 @@
 package com.barclays;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Service {
-    public static void selection(int input) {
-        DataMap emp_data=new DataMap();
-        //DataSQL emp_data=new DataSQL();
+    public static void selection(int input) throws SQLException {
+        //DataMap emp_data=new DataMap();
+        DataSQL emp_data=new DataSQL();
         Scanner sc=new Scanner(System.in);
         switch (input) {
             case 1:
