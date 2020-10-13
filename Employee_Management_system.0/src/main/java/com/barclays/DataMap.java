@@ -3,7 +3,7 @@ package com.barclays;
 import java.util.HashMap;
 
 public class DataMap implements Data{
-    static HashMap<String, Emp> employeeMap = new HashMap<>();
+    static HashMap<String, Emp> employeeMap = new HashMap();
 
     public void add(String Id,Emp emp)
     {
