@@ -1,13 +1,16 @@
 package com.barclays;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
-
+@Controller
 public class Presentation {
+    @RequestMapping("/welcome")
     public static void MainMenu() throws SQLException {
-        Service service;
-        service = new Service();
+        Service service = new Service();
         int input;
         do
          {
